@@ -9,10 +9,10 @@ int main() {
 	cout << "Enter the amount: ";
 	cin >> amount;
 
-	int grn = static_cast<int>(amount);
-	int kopijoc = static_cast<int>(round((amount - grn) * 100));
+	int UAH = static_cast<int>(amount);
+	int kopecks = static_cast<int>(round((amount - UAH) * 100));
 
-	cout << grn << " grn " << setw(2) << setfill('0') << kopijoc << " kopijoc" << endl;
+	cout << UAH << " UAH " << setw(2) << setfill('0') << kopecks << " kopecks" << endl;
 
 	return 0;
 }
