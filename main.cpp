@@ -1,18 +1,36 @@
 #include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 int main() {
-    double length, width, height;
+    double mapScale, distanceInCm, actualDistance;
 
-    std::cout << "Enter the length of the parallelepiped (in centimeter): ";
-    std::cin >> length;
-    std::cout << "Enter the width of the parallelepiped (in centimeter): ";
-    std::cin >> width;
-    std::cout << "Enter the height of the parallelepiped (in centimeter): ";
-    std::cin >> height;
+    cout << "Calculation of the distance between settlements." << endl;
+    cout << "Enter the initial data:" << endl;
+    cout << "Map scale (number of kilometers in one centimeter): ";
+    if (!(cin >> mapScale)) {
+        cerr << "Error: Invalid input for map scale. Please enter a positive number." << endl;
+        return 1;
+    }
+    if (mapScale <= 0) {
+        cerr << "Error: Map scale must be positive." << endl;
+        return 1;
+    }
+    cout << "Distance between the points that depict settlements (cm): ";
+    if (!(cin >> distanceInCm)) {
+        cerr << "Error: Invalid input for distance. Please enter a positive number." << endl;
+        return 1;
+    }
+    if (distanceInCm <= 0) {
+        cerr << "Error: Distance between settlements must be positive." << endl;
+        return 1;
+    }
 
-    double volume = length * width * height;
+    actualDistance = mapScale * distanceInCm;
 
-    std::cout << "The volume of the parallelepiped is: " << volume << " cubic meters\n";
+    cout << endl << "The distance between settlements is " << actualDistance << " kilometers." << endl;
 
     return 0;
+
 }
