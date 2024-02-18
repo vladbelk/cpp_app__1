@@ -1,33 +1,18 @@
 #include <iostream>
-#include <iomanip> // For formatted output
-
-using namespace std;
 
 int main() {
-    double length, width, height, volume;
+    double length, width, height;
 
-    cout << fixed << setprecision(2);
-    cout << "Calculating the volume of a parallelepiped." << endl;
-    cout << "Enter the dimensions (in cm):" << endl;
-    cout << "Length: ";
-    if (!(cin >> length)) {
-        cerr << "Error: Invalid input for length. Please enter a real number." << endl;
-        return 1;
-    }
-    cout << "Width: ";
-    if (!(cin >> width)) {
-        cerr << "Error: Invalid input for width. Please enter a real number." << endl;
-        return 1;
-    }
-    cout << "Height: ";
-    if (!(cin >> height)) {
-        cerr << "Error: Invalid input for height. Please enter a real number." << endl;
-        return 1;
-    }
+    std::cout << "Enter the length of the parallelepiped (in centimeter): ";
+    std::cin >> length;
+    std::cout << "Enter the width of the parallelepiped (in centimeter): ";
+    std::cin >> width;
+    std::cout << "Enter the height of the parallelepiped (in centimeter): ";
+    std::cin >> height;
 
-    volume = length * width * height;
- 
-    cout << endl << "Volume: " << volume << " cubic centimeters." << endl;
+    double volume = length * width * height;
+
+    std::cout << "The volume of the parallelepiped is: " << volume << " cubic meters\n";
 
     return 0;
 }
