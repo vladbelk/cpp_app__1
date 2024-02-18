@@ -4,25 +4,32 @@
 using namespace std;
 
 int main() {
-	double distance, time_minutes, time_seconds, total_time_seconds, speed_ms, speed_kmh;
+    double distanceMeters, timeMinutes, timeSeconds, totalTimeSeconds, speedMps, speedKmph;
 
-	cout << "Calculation of running speed:" << endl;
+    cout << "Calculation of running speed:" << endl;
+    cout << "Enter the distance length (meters): ";
+    cin >> distanceMeters;
+    if (distanceMeters <= 0) {
+        cerr << "Error: Distance must be positive." << endl;
+        return 1;
+    }
+    cout << "Enter time (min. sec): ";
+    cin >> timeMinutes >> timeSeconds;
+    if (timeMinutes < 0 || timeSeconds < 0 || timeSeconds >= 60) {
+        cerr << "Error: Invalid time format. Please enter minutes as positive integers and seconds between 0 and 59." << endl;
+        return 1;
+    }
 
-	cout << "Enter the distance length (meters) = ";
-	cin >> distance;
+    totalTimeSeconds = timeMinutes * 60 + timeSeconds;
 
-	cout << "Enter time (min. sec) = ";
-	cin >> time_minutes >> time_seconds;
+    speedMps = distanceMeters / totalTimeSeconds;
 
-	total_time_seconds = time_minutes * 60 + time_seconds;
+    speedKmph = speedMps * 3600 / 1000;
+    cout << fixed << setprecision(2);
 
-	speed_ms = distance / total_time_seconds;
+    cout << "Distance: " << distanceMeters << " m" << endl;
+    cout << "Time: " << timeMinutes << " min " << timeSeconds << " sec = " << totalTimeSeconds << " sec" << endl;
+    cout << "You ran at a speed of " << speedKmph << " km/h" << endl;
 
-	speed_kmh = speed_ms * 3600 / 1000;
-
-	cout << "Distance: " << distance << " m" << endl;
-	cout << "Hour: " << fixed << setprecision(0) << time_minutes << " min " << setprecision(2) << time_seconds << " sec = " << total_time_seconds << " sec" << endl;
-	cout << "You ran at a speed of " << setprecision(2) << speed_kmh << " km/h" << endl;
-
-	return 0;
+    return 0;
 }
