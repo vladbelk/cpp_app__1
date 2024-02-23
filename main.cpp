@@ -1,8 +1,26 @@
-#include<iostream>
+#include <iostream>
+
 using namespace std;
 
 int main() {
-	std::cout << "Hello, World!" << std::endl;
-	system("pause");
-	return 0;
+    double num1, num2;
+
+    cout << "Enter the first number: ";
+    cin >> num1;
+
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    if (num1 == num2) {
+        cout << "The numbers are equal." << endl;
+    }
+    else {
+        if (num1 > num2) {
+            swap(num1, num2);
+        }
+
+        cout << "The numbers in ascending order are: " << num1 << " " << num2 << endl;
+    }
+
+    return 0;
 }
