@@ -1,8 +1,19 @@
-#include<iostream>
+#include <iostream>
+
 using namespace std;
 
 int main() {
-	std::cout << "Hello, World!" << std::endl;
-	system("pause");
-	return 0;
+    int num;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if (num % 2 == 0) {
+        cout << num << " is even." << endl;
+    }
+    else {
+        cout << num << " is odd." << endl;
+    }
+
+    return 0;
 }
