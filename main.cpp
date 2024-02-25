@@ -1,23 +1,22 @@
 #include <iostream>
 
 using namespace std;
-int main() {
-    int num1, num2;
 
+int main() {
+    int* x = new int;
+    int* y = new int;
+    
     cout << "Enter the first number: ";
-    cin >> num1;
+    cin >> *x;
 
     cout << "Enter the second number: ";
-    cin >> num2;
+    cin >> *y;
 
-    int* ptr1 = &num1;
-    int* ptr2 = &num2;
-
-    if (*ptr1 > *ptr2) {
-        cout << "The greater number is: " << *ptr1 << endl;
+    if (*x > *y) {
+        cout << "The greater number is: " << *x << endl;
     }
-    else if (*ptr1 < *ptr2) {
-        cout << "The greater number is: " << *ptr2 << endl;
+    else if (*x < *y) {
+        cout << "The greater number is: " << *y << endl;
     }
     else {
         cout << "The numbers are equal." << endl;
