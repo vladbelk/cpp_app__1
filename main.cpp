@@ -6,13 +6,10 @@ void reverseArray(int* arr, int size) {
     int* ptrStart = arr;
     int* ptrEnd = arr + size - 1;
 
-    int temp;
-
     while (ptrStart < ptrEnd) {
-        temp = *ptrStart;
+        int temp = *ptrStart;
         *ptrStart = *ptrEnd;
         *ptrEnd = temp;
-
         ptrStart++;
         ptrEnd--;
     }
